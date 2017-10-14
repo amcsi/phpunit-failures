@@ -5,9 +5,9 @@
         <textarea v-model="testOutput"></textarea>
       </div>
       <div class="results">
-        <div class="files"><pre>{{files}}</pre></div>
-        <div class="cli-command">c</div>
-        <div class="phpstorm-command">d</div>
+        <div class="files"><pre>{{ matches.files }}</pre></div>
+        <div class="phpstorm-command">{{ matches.phpstormCommand }}</div>
+        <div class="cli-command"><pre>{{ matches.cliCommand }}</pre></div>
       </div>
     </div>
   </div>
@@ -20,20 +20,24 @@
         testOutput: '',
       };
     },
-    methods: {
-      onTestOutputChange() {
-      },
-    },
     computed: {
-      files() {
+      matches() {
         const pattern = /\s+\d+\) ([\w\\\\:]+)/g;
         let ret = '';
         let match;
+        const matches = [];
         // eslint-disable-next-line no-cond-assign
         while ((match = pattern.exec(this.testOutput)) !== null) {
-          ret += `${match[1]}\n`;
+          matches.push(match[1]);
         }
-        return ret;
+        const escapeBackslahes = input => input.replace(/\\/g, '\\\\');
+        const phpstormCommand = `--filter="/^(${escapeBackslahes(matches.join('|'))})/"`;
+        matches.sort();
+        return {
+          files: matches.join("\n"),
+          phpstormCommand,
+          cliCommand: `phpunit ${escapeBackslahes(phpstormCommand)}`,
+        }
       },
     },
     components: {},
