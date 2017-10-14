@@ -2,7 +2,7 @@
   <div class="container">
     <div class="columns">
       <div class="test-output">
-        <textarea v-model="testOutput"></textarea>
+        <textarea :value="testOutput" @input="$emit('update:testOutput', $event.target.value)"></textarea>
       </div>
       <div class="results">
         <div class="files"><pre>{{ matches.files }}</pre></div>
@@ -15,11 +15,7 @@
 <script>
   /** @class Page */
   export default {
-    data() {
-      return {
-        testOutput: '',
-      };
-    },
+    props: ['testOutput'],
     computed: {
       matches() {
         const pattern = /\s+\d+\) ([\w\\\\:]+)/g;
