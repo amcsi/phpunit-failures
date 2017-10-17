@@ -11,18 +11,18 @@
 
         <div class="files">
           <h4>List of files:</h4>
-          <textarea class="files__textarea">{{ matches.files }}</textarea>
+          <textarea class="files__textarea look-disabled" v-model="matches.files"></textarea>
 
 
         </div>
         <div class="phpstorm-command">
           <h4>PhpStorm Test Runner options:</h4>
-          <input class="phpstorm-command__input"
+          <input class="phpstorm-command__input look-disabled"
             :value="matches.phpstormCommand">
         </div>
         <div class="cli-command">
           <h4>CLI command:</h4>
-          <input class="cli-command__input" :value="matches.cliCommand">
+          <input class="cli-command__input look-disabled" :value="matches.cliCommand">
         </div>
       </div>
     </div>
@@ -59,6 +59,10 @@
   };
 </script>
 <style>
+  .look-disabled {
+    color: rgb(84, 84, 84);
+    background-color: rgb(235, 235, 228);
+  }
   body {
     height: 100%;
   }
