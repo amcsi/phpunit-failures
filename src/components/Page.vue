@@ -66,13 +66,11 @@
     height: 100%;
   }
   .columns {
-    background-color: aqua;
     display: flex;
     height: 100%;
   }
   .test-output {
     flex: 1;
-    background-color: coral;
   }
   .test-output__textarea {
     min-width: 600px;
@@ -82,10 +80,8 @@
   .results {
     max-width: 800px;
     min-width: 400px;
-    background-color: blue;
   }
   .files {
-    background-color: cyan;
   }
   .files__textarea {
     overflow: scroll;
@@ -94,13 +90,11 @@
     white-space: nowrap;
   }
   .phpstorm-command {
-    background-color: maroon;
   }
   .phpstorm-command__input {
     min-width: 800px;
   }
   .cli-command {
-    background-color: lightblue;
   }
   .cli-command__input {
     min-width: 800px;
