@@ -2,12 +2,28 @@
   <div class="container">
     <div class="columns">
       <div class="test-output">
-        <textarea :value="testOutput" @input="$emit('update:testOutput', $event.target.value)"></textarea>
+        <h3>Paste test failures output here:</h3>
+        <textarea class="test-output__textarea" :value="testOutput"
+          @input="$emit('update:testOutput', $event.target.value)"></textarea>
       </div>
       <div class="results">
-        <div class="files"><pre>{{ matches.files }}</pre></div>
-        <div class="phpstorm-command">{{ matches.phpstormCommand }}</div>
-        <div class="cli-command"><pre>{{ matches.cliCommand }}</pre></div>
+        <h3>Results ({{ matches.count || 0 }} test methods):</h3>
+
+        <div class="files">
+          <h4>List of files:</h4>
+          <textarea class="files__textarea">{{ matches.files }}</textarea>
+
+
+        </div>
+        <div class="phpstorm-command">
+          <h4>PhpStorm Test Runner options:</h4>
+          <input class="phpstorm-command__input"
+            :value="matches.phpstormCommand">
+        </div>
+        <div class="cli-command">
+          <h4>CLI command:</h4>
+          <input class="cli-command__input" :value="matches.cliCommand">
+        </div>
       </div>
     </div>
   </div>
@@ -27,12 +43,15 @@
           matches.push(match[1]);
         }
         const escapeBackslahes = input => input.replace(/\\/g, '\\\\');
-        const phpstormCommand = `--filter="/^(${escapeBackslahes(matches.join('|'))})/"`;
+        const phpstormCommand = matches.length ?
+          `--filter="/^(${escapeBackslahes(matches.join('|'))})/"` :
+          '';
         matches.sort();
         return {
+          count: matches.length,
           files: matches.join("\n"),
           phpstormCommand,
-          cliCommand: `phpunit ${escapeBackslahes(phpstormCommand)}`,
+          cliCommand: phpstormCommand ? `phpunit ${escapeBackslahes(phpstormCommand)}` : '',
         }
       },
     },
@@ -55,6 +74,11 @@
     flex: 1;
     background-color: coral;
   }
+  .test-output__textarea {
+    min-width: 600px;
+    min-height: 600px;
+    white-space: nowrap;
+   }
   .results {
     max-width: 800px;
     min-width: 400px;
@@ -63,11 +87,23 @@
   .files {
     background-color: cyan;
   }
-  .cli-command {
-    background-color: lightblue;
+  .files__textarea {
+    overflow: scroll;
+    min-width: 800px;
+    min-height: 300px;
+    white-space: nowrap;
   }
   .phpstorm-command {
     background-color: maroon;
+  }
+  .phpstorm-command__input {
+    min-width: 800px;
+  }
+  .cli-command {
+    background-color: lightblue;
+  }
+  .cli-command__input {
+    min-width: 800px;
   }
 </style>
 
