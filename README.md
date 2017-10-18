@@ -1,6 +1,8 @@
 # phpunit-failures
 
-> PhpUnit failures tool
+> Web app that helps format the failures of in PhpUnit's output to a list of files and some other useful formats.
+
+http://phpunit-failures.szeremi.org/
 
 ## Build Setup
 
