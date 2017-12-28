@@ -29,23 +29,16 @@
   </div>
 </template>
 <script>
-  /** @class Page */
-  export default {
+import { convertMatchesToPhpStormArgument, getMatches } from '../converter';
+
+/** @class Page */
+export default {
     props: ['testOutput'],
     computed: {
       matches() {
-        const pattern = /\s+\d+\) ([\w\\\\:]+)/g;
-        let ret = '';
-        let match;
-        const matches = [];
-        // eslint-disable-next-line no-cond-assign
-        while ((match = pattern.exec(this.testOutput)) !== null) {
-          matches.push(match[1]);
-        }
+        const matches = getMatches(this.testOutput);
         const escapeBackslahes = input => input.replace(/\\/g, '\\\\');
-        const phpstormCommand = matches.length ?
-          `--filter="/^(${escapeBackslahes(matches.join('|'))})/"` :
-          '';
+        const phpstormCommand = convertMatchesToPhpStormArgument(matches);
         matches.sort();
         return {
           count: matches.length,

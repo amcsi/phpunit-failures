@@ -1,0 +1,124 @@
+
+Time: 794 ms, Memory: 6.00MB
+
+There was 1 failure:
+
+1) amcsi\playground\test\Class3Test::testGetLargestPrimeFactor with data set #3 (5, 6)
+Failed asserting that 5 is identical to 6.
+
+C:\0\quick\playground\test\Class3Test.php:18
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+--
+
+There were 18 risky tests:
+
+1) amcsi\playground\test\Class4Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+2) amcsi\playground\test\Class4Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+3) amcsi\playground\test\Class4Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+4) amcsi\playground\test\Class5Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+5) amcsi\playground\test\Class5Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+6) amcsi\playground\test\Class5Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+7) amcsi\playground\test\Class6Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+8) amcsi\playground\test\Class6Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+9) amcsi\playground\test\Class6Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+10) amcsi\playground\test\Class7Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+11) amcsi\playground\test\Class7Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+12) amcsi\playground\test\Class7Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+13) amcsi\playground\test\Class8Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+14) amcsi\playground\test\Class8Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+15) amcsi\playground\test\Class8Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+16) amcsi\playground\test\Class9Test::test1
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+17) amcsi\playground\test\Class9Test::test2
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
+18) amcsi\playground\test\Class9Test::test3
+This test did not perform any assertions
+
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:212
+C:\Users\attila\AppData\Roaming\Composer\vendor\phpunit\phpunit\src\TextUI\Command.php:141
+
