@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import 'bulmaswatch/default/bulmaswatch.min.css';
+
   export default {
     name: 'app',
     data() {
