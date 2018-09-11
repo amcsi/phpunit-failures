@@ -16,7 +16,7 @@
       <div class="results">
         <h3>Results ({{ matches.count || 0 }} test methods):</h3>
 
-        <div v-if="testOutput">
+        <div :class="{ 'without-test-output': !testOutput }">
           <div class="files">
             <h4>List of files:</h4>
             <textarea
@@ -151,6 +151,9 @@ Tests: 1, Assertions: 1, Failures: 1.
   }
   .cli-command__input {
     width: 100%;
+  }
+  .without-test-output {
+    opacity: .2;
   }
 </style>
 
