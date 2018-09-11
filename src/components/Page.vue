@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <h1>PhpUnit Failures</h1>
+
+    <p>
+      This web app lets you paste the output of test failures in PhpUnit, and it gives you scripts with which you can
+      rerun just those test which have failed.
+    </p>
+
     <div class="columns">
       <div class="test-output">
         <h3>Paste test failures output here:</h3>
