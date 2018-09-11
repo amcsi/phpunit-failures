@@ -18,18 +18,19 @@
 
         <div class="files">
           <h4>List of files:</h4>
-          <textarea class="files__textarea look-disabled" v-model="matches.files"></textarea>
+          <textarea class="files__textarea look-disabled" v-model="matches.files" @keypress.prevent @paste.prevent></textarea>
 
 
         </div>
         <div class="phpstorm-command">
           <h4>PhpStorm Test Runner options:</h4>
           <input class="phpstorm-command__input look-disabled"
+            @keypress.prevent @paste.prevent
             :value="matches.phpstormCommand">
         </div>
         <div class="cli-command">
           <h4>CLI command:</h4>
-          <input class="cli-command__input look-disabled" :value="matches.cliCommand">
+          <input class="cli-command__input look-disabled" :value="matches.cliCommand" @keypress.prevent @paste.prevent>
         </div>
       </div>
     </div>
