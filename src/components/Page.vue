@@ -3,8 +3,15 @@
     <div class="columns">
       <div class="test-output">
         <h3>Paste test failures output here:</h3>
-        <textarea class="test-output__textarea" :value="testOutput"
-          @input="$emit('update:testOutput', $event.target.value)"></textarea>
+        <div class="test-output__textarea-container">
+          <textarea class="test-output__textarea" :value="testOutput" rows="20"
+            @input="$emit('update:testOutput', $event.target.value)"></textarea>
+          <div
+              v-show="!testOutput"
+              class="test-output__textarea__multiline-placeholder"
+              v-html="failuresPlaceholder"
+          ></div>
+        </div>
       </div>
       <div class="results">
         <h3>Results ({{ matches.count || 0 }} test methods):</h3>
@@ -34,6 +41,27 @@ import { convertMatchesToPhpStormArgument, getMatches } from '../converter';
 /** @class Page */
 export default {
     props: ['testOutput'],
+    data() {
+      return {
+        failuresPlaceholder: `PHPUnit 3.4.13 by Sebastian Bergmann.
+
+F
+
+Time: 0 seconds, Memory: 5.75Mb
+
+There was 1 failure:
+
+1) TestSimpleMultiplier::test_multiply_simple
+Multiplying 2 and 3 did not return 6
+Failed asserting that <6> matches expected <7>.
+
+.../testMessage.php:23
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+`,
+      };
+    },
     computed: {
       matches() {
         const matches = getMatches(this.testOutput);
@@ -68,12 +96,35 @@ export default {
   }
   .test-output {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-output__textarea-container {
+    position: relative;
   }
   .test-output__textarea {
-    min-width: 600px;
-    min-height: 600px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    padding: .5em;
     white-space: nowrap;
-   }
+    font-size: 1rem;
+  }
+
+  .test-output__textarea__multiline-placeholder {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid transparent;
+    padding: .5em;
+    white-space: pre;
+    text-align: left;
+    font-family: monospace;
+    font-size: 1rem;
+    opacity: .5;
+  }
   .results {
     max-width: 800px;
     min-width: 400px;
