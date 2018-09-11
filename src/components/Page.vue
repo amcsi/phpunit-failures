@@ -47,6 +47,11 @@
         </div>
       </div>
     </div>
+
+    <footer>
+      Created by <a href="https://www.szeremi.org/" rel="nofollow">Attila Szeremi</a>.
+      Website source code can be found on <a href="https://github.com/amcsi/phpunit-failures" rel="nofollow">Github</a>.
+    </footer>
   </div>
 </template>
 <script>
@@ -94,6 +99,13 @@ Tests: 1, Assertions: 1, Failures: 1.
   };
 </script>
 <style>
+  a {
+    text-decoration: none;
+    color: cornflowerblue;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   .look-disabled {
     color: rgb(84, 84, 84);
     background-color: rgb(235, 235, 228);
@@ -161,6 +173,9 @@ Tests: 1, Assertions: 1, Failures: 1.
   }
   .without-test-output {
     opacity: .2;
+  }
+  footer {
+    margin-top: 2em;
   }
 </style>
 
