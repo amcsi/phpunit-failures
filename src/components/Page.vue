@@ -16,21 +16,27 @@
       <div class="results">
         <h3>Results ({{ matches.count || 0 }} test methods):</h3>
 
-        <div class="files">
-          <h4>List of files:</h4>
-          <textarea class="files__textarea look-disabled" v-model="matches.files" @keypress.prevent @paste.prevent></textarea>
-
-
-        </div>
-        <div class="phpstorm-command">
-          <h4>PhpStorm Test Runner options:</h4>
-          <input class="phpstorm-command__input look-disabled"
-            @keypress.prevent @paste.prevent
-            :value="matches.phpstormCommand">
-        </div>
-        <div class="cli-command">
-          <h4>CLI command:</h4>
-          <input class="cli-command__input look-disabled" :value="matches.cliCommand" @keypress.prevent @paste.prevent>
+        <div v-if="testOutput">
+          <div class="files">
+            <h4>List of files:</h4>
+            <textarea
+                rows="5"
+                class="files__textarea look-disabled"
+                v-model="matches.files"
+                @keypress.prevent
+                @paste.prevent
+            ></textarea>
+          </div>
+          <div class="phpstorm-command">
+            <h4>PhpStorm Test Runner options:</h4>
+            <input class="phpstorm-command__input look-disabled"
+              @keypress.prevent @paste.prevent
+              :value="matches.phpstormCommand">
+          </div>
+          <div class="cli-command">
+            <h4>CLI command:</h4>
+            <input class="cli-command__input look-disabled" :value="matches.cliCommand" @keypress.prevent @paste.prevent>
+          </div>
         </div>
       </div>
     </div>
@@ -96,15 +102,15 @@ Tests: 1, Assertions: 1, Failures: 1.
     height: 100%;
   }
   .test-output {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-direction: column;
   }
   .test-output__textarea-container {
+    flex: 1;
     position: relative;
   }
   .test-output__textarea {
-    flex: 1;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid gray;
@@ -127,26 +133,24 @@ Tests: 1, Assertions: 1, Failures: 1.
     opacity: .5;
   }
   .results {
-    max-width: 800px;
-    min-width: 400px;
+    flex: 1;
   }
   .files {
   }
   .files__textarea {
     overflow: scroll;
-    min-width: 800px;
-    min-height: 300px;
+    width: 100%;
     white-space: nowrap;
   }
   .phpstorm-command {
   }
   .phpstorm-command__input {
-    min-width: 800px;
+    width: 100%;
   }
   .cli-command {
   }
   .cli-command__input {
-    min-width: 800px;
+    width: 100%;
   }
 </style>
 
